@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04121a"/>
+      <stop offset="55%" stop-color="#0a2333"/>
+      <stop offset="100%" stop-color="#04151f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="78%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="node" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <radialGradient id="ping" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="headTxt" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e6fbff"/>
+      <stop offset="100%" stop-color="#8be9fd"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="360" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="360" fill="url(#glow)"/>
+
+  <!-- grid lines -->
+  <g stroke="#1c4a5e" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="150" y1="0" x2="150" y2="360"/>
+    <line x1="330" y1="0" x2="330" y2="360"/>
+    <line x1="510" y1="0" x2="510" y2="360"/>
+    <line x1="690" y1="0" x2="690" y2="360"/>
+    <line x1="870" y1="0" x2="870" y2="360"/>
+    <line x1="1050" y1="0" x2="1050" y2="360"/>
+  </g>
+
+  <!-- network topology on right side -->
+  <g stroke="#2dd4bf" stroke-width="1.4" opacity="0.55">
+    <line x1="760" y1="120" x2="900" y2="80"/>
+    <line x1="760" y1="120" x2="880" y2="170"/>
+    <line x1="760" y1="120" x2="850" y2="250"/>
+    <line x1="900" y1="80" x2="1040" y2="60"/>
+    <line x1="900" y1="80" x2="1010" y2="130"/>
+    <line x1="880" y1="170" x2="1030" y2="190"/>
+    <line x1="880" y1="170" x2="990" y2="240"/>
+    <line x1="850" y1="250" x2="960" y2="290"/>
+    <line x1="850" y1="250" x2="1000" y2="260"/>
+  </g>
+
+  <g>
+    <circle cx="760" cy="120" r="9" fill="url(#node)"/>
+    <circle cx="900" cy="80" r="7" fill="url(#node)"/>
+    <circle cx="880" cy="170" r="7" fill="url(#node)"/>
+    <circle cx="850" cy="250" r="7" fill="url(#node)"/>
+    <circle cx="1040" cy="60" r="5" fill="#5eead4"/>
+    <circle cx="1010" cy="130" r="5" fill="#5eead4"/>
+    <circle cx="1030" cy="190" r="5" fill="#5eead4"/>
+    <circle cx="990" cy="240" r="5" fill="#5eead4"/>
+    <circle cx="960" cy="290" r="5" fill="#5eead4"/>
+    <circle cx="1000" cy="260" r="5" fill="#5eead4"/>
+  </g>
+
+  <!-- ping radar rings around main node -->
+  <circle cx="760" cy="120" r="26" fill="none" stroke="#67e8f9" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="760" cy="120" r="42" fill="none" stroke="#67e8f9" stroke-width="1" opacity="0.3"/>
+  <circle cx="760" cy="120" r="60" fill="url(#ping)"/>
+
+  <!-- scanning sweep line -->
+  <path d="M 760 120 L 1040 60" stroke="#e0fffe" stroke-width="1" opacity="0.4"/>
+
+  <!-- subnet sweep bracket decoration -->
+  <g opacity="0.8">
+    <rect x="60" y="255" width="330" height="30" rx="4" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.5"/>
+    <text x="70" y="275" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#5eead4" opacity="0.85">192.168.1.0/24 &#8594; scanning...</text>
+  </g>
+
+  <!-- port markers -->
+  <g fill="#22d3ee" opacity="0.7">
+    <rect x="60" y="235" width="4" height="10"/>
+    <rect x="70" y="235" width="4" height="10"/>
+    <rect x="80" y="235" width="4" height="10"/>
+    <rect x="90" y="235" width="4" height="6"/>
+    <rect x="100" y="235" width="4" height="10"/>
+  </g>
+
+  <!-- headline -->
+  <text x="60" y="150" font-family="'Segoe UI', Arial, sans-serif" font-size="72" font-weight="700" fill="url(#headTxt)" textLength="620" lengthAdjust="spacingAndGlyphs">IP Scanner</text>
+  <text x="60" y="228" font-family="'Segoe UI', Arial, sans-serif" font-size="72" font-weight="700" fill="url(#headTxt)" textLength="360" lengthAdjust="spacingAndGlyphs">Advanced</text>
+
+  <!-- tagline -->
+  <text x="62" y="270" font-family="'Segoe UI', Arial, sans-serif" font-size="22" fill="#a9d8e0" textLength="640" lengthAdjust="spacingAndGlyphs">Scan, resolve, export — subnet sweep, hostnames, ports, single .exe</text>
+
+  <!-- accent underline -->
+  <rect x="62" y="288" width="120" height="4" rx="2" fill="#2dd4bf"/>
+</svg>
